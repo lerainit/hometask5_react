@@ -1,0 +1,45 @@
+.outer_container{
+    position: absolute;
+    width: 100%;
+    height: 1500px;
+  
+   
+    top: 0;
+    background-color:rgba(0,0,0,0.7);
+  }
+  @media(max-width:980px){
+    .outer_container{
+  height: 2100px;
+    }
+  }
+  .modal_main_container{
+    width: 550px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    background-color: cadetblue;
+    transform: translate(-50%,-50%);
+    border: 2px solid black;
+    border-radius: 7px;
+    color: green;
+  }
+  .close_btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 7px;
+    background-color:crimson;
+    color: #fff;
+    margin-left: 510px;
+  
+  }
+  .modal_btn{
+    width: 100px;
+    height: 40px;
+    border-radius: 7px;
+    background-color:lightslategrey;
+    color: #fff;
+  
+  }
+  

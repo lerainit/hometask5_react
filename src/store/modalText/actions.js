@@ -1,0 +1,1 @@
+ export const SET_VALUE_MODAL = 'SET_VALUE_MODAL'
