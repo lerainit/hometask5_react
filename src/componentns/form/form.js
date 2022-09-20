@@ -38,9 +38,18 @@ surname:yup.string()
 .min(3, 'Min 3 symbols')
 .max(12,'Max 12 symbols')
 .required('Surname is required'),
-age:yup.number('age must be number')
-.required('Age is required')
+age:yup.number()
+.integer('Age must be integer')
+.positive('Age must be positive')
+.required('Age is required'),
+adress:yup.string()
+.required('Adress is required'),
+tel:yup.number()
+.required('Number is required')
+.min(7,'Min 7 digits')
+
 })
+
 
 return(
 
@@ -97,13 +106,13 @@ type='text'
 name ='adress'
 placeholder = 'Adress'
 />
-
+<ErrorMessage name="adress">{msg => <span className='error'>{msg}</span>}</ErrorMessage>
 <Field
 type='text'
 name ='tel'
 placeholder = 'Tel'
 />
-
+<ErrorMessage name="tel">{msg => <span className='error'>{msg}</span>}</ErrorMessage>
 <button disabled={!dirty && !localStorage.getItem('values') && JSON.parse(localStorage.getItem('values')).includes('') || !isValid}  type="submit">Submit</button>
 
 </Form>
