@@ -1,5 +1,5 @@
-import React,{useEffect} from "react";
-import { Field, Formik ,FormikProps,Form,ErrorMessage} from "formik";
+import React from "react";
+import { Field, Formik,Form,ErrorMessage} from "formik";
 import { useDispatch } from "react-redux";
 import { clearCartAC } from "../../store/addCards/actionCreators"; 
 import CustomInput from "./custominput";
@@ -49,9 +49,7 @@ initialValues ={initialValues}
 validationSchema ={validationSchema}
 onSubmit = {(values,FormikProps) =>{
     console.log(values)
-    console.log(FormikProps)
-  
-    console.log(JSON.parse(localStorage.getItem('addCards')))
+ console.log(JSON.parse(localStorage.getItem('addCards')))
   dispatch(clearCartAC())
 }}
 
