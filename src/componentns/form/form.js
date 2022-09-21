@@ -5,9 +5,6 @@ import { clearCartAC } from "../../store/addCards/actionCreators";
 import CustomInput from "./custominput";
 import * as yup from 'yup'
 import './form.scss'
-if(!localStorage.getItem('values')){
-  localStorage.setItem('values',JSON.stringify({}))
-}
 
 const CheckoutForm = () =>{
   const dispatch = useDispatch()
@@ -19,15 +16,7 @@ let initialValues = {
   adress:'',
   tel:'+38'
 }
-window.onload=()=>{
-  let reload = true
-  localStorage.setItem('reload',JSON.stringify(reload))
-  
-}
 
-if(JSON.parse(localStorage.getItem('reload')) ){
- initialValues = JSON.parse(localStorage.getItem('values'))
-}
 
 
 const validationSchema = yup.object().shape({
@@ -67,17 +56,11 @@ onSubmit = {(values,FormikProps) =>{
 }}
 
 >
-{ ({dirty,isValid,values}) =>{
+{ ({dirty,isValid}) =>{
 
 
-if(JSON.parse(localStorage.getItem('reload'))){
-
-  localStorage.setItem('values',JSON.stringify(values))
 
 
-}
-let Values = JSON.parse(localStorage.getItem('values'))
-let include = Values
   return(
 <Form>
 
@@ -113,13 +96,9 @@ name ='tel'
 placeholder = 'Tel'
 />
 <ErrorMessage name="tel">{msg => <span className='error'>{msg}</span>}</ErrorMessage>
-<button disabled={!dirty && !localStorage.getItem('values') && JSON.parse(localStorage.getItem('values')).includes('') || !isValid}  type="submit">Submit</button>
+<button disabled={!dirty  || !isValid}  type="submit">Submit</button>
 
 </Form>
-
-
-
-
 
 )
 }
