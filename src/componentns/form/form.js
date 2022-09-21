@@ -2,6 +2,7 @@ import React,{useEffect} from "react";
 import { Field, Formik ,FormikProps,Form,ErrorMessage} from "formik";
 import { useDispatch } from "react-redux";
 import { clearCartAC } from "../../store/addCards/actionCreators"; 
+import CustomInput from "./custominput";
 import * as yup from 'yup'
 import './form.scss'
 if(!localStorage.getItem('values')){
@@ -87,13 +88,12 @@ placeholder = 'Name'
 
 />
 <ErrorMessage name="name">{msg => <span className='error'>{msg}</span>}</ErrorMessage>
-<Field
-type='text'
-name ='surname'
-placeholder = 'Surname'
 
-/>
-<ErrorMessage name="surname">{msg => <span className='error'>{msg}</span>}</ErrorMessage>
+
+<CustomInput name='surname' type='text' placeholder='Surname' />
+
+
+
 <Field
 type='text'
 name ='age'
@@ -129,3 +129,4 @@ placeholder = 'Tel'
 
 }
 export default CheckoutForm
+
