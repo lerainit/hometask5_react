@@ -94,7 +94,7 @@ name ='tel'
 placeholder = 'Tel'
 />
 <ErrorMessage name="tel">{msg => <span className='error'>{msg}</span>}</ErrorMessage>
-<button disabled={!dirty  || !isValid}  type="submit">Submit</button>
+<button className='form_button'  disabled={!dirty  || !isValid}  type="submit">Checkout</button>
 
 </Form>
 
