@@ -14,7 +14,7 @@ let initialValues = {
   surname:'',
   age:'',
   adress:'',
-  tel:'+38'
+  tel:''
 }
 
 
